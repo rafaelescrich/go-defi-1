@@ -7,10 +7,10 @@ import (
 	"math/big"
 	"time"
 
-	"github.com/524119574/go-defi/client"
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/ethclient"
+	"github.com/rafaelescrich/go-defi-1/client"
 )
 
 func measureGasPrice() {

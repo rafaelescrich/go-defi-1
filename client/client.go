@@ -7,29 +7,29 @@ import (
 	"math/big"
 	"strings"
 
-	"github.com/524119574/go-defi/binding/haave"
-	"github.com/524119574/go-defi/binding/hbalancer_exchange"
-	"github.com/524119574/go-defi/binding/hcether"
-	"github.com/524119574/go-defi/binding/hctoken"
-	"github.com/524119574/go-defi/binding/hcurve"
-	"github.com/524119574/go-defi/binding/hkyber"
-	"github.com/524119574/go-defi/binding/hmaker"
-	"github.com/524119574/go-defi/binding/huniswap"
-	"github.com/524119574/go-defi/binding/hyearn"
+	"github.com/rafaelescrich/go-defi-1/binding/haave"
+	"github.com/rafaelescrich/go-defi-1/binding/hbalancer_exchange"
+	"github.com/rafaelescrich/go-defi-1/binding/hcether"
+	"github.com/rafaelescrich/go-defi-1/binding/hctoken"
+	"github.com/rafaelescrich/go-defi-1/binding/hcurve"
+	"github.com/rafaelescrich/go-defi-1/binding/hkyber"
+	"github.com/rafaelescrich/go-defi-1/binding/hmaker"
+	"github.com/rafaelescrich/go-defi-1/binding/huniswap"
+	"github.com/rafaelescrich/go-defi-1/binding/hyearn"
 
-	"github.com/524119574/go-defi/binding/herc20tokenin"
+	"github.com/rafaelescrich/go-defi-1/binding/herc20tokenin"
 	"github.com/ethereum/go-ethereum/accounts/abi"
 
-	"github.com/524119574/go-defi/binding/aave/lendingpool"
-	ceth_binding "github.com/524119574/go-defi/binding/compound/cETH"
-	"github.com/524119574/go-defi/binding/compound/cToken"
-	"github.com/524119574/go-defi/binding/erc20"
-	"github.com/524119574/go-defi/binding/furucombo"
-	"github.com/524119574/go-defi/binding/swapper"
-	"github.com/524119574/go-defi/binding/uniswap"
-	"github.com/524119574/go-defi/binding/yearn/yregistry"
-	"github.com/524119574/go-defi/binding/yearn/yvault"
-	"github.com/524119574/go-defi/binding/yearn/yweth"
+	"github.com/rafaelescrich/go-defi-1/binding/aave/lendingpool"
+	ceth_binding "github.com/rafaelescrich/go-defi-1/binding/compound/cETH"
+	"github.com/rafaelescrich/go-defi-1/binding/compound/cToken"
+	"github.com/rafaelescrich/go-defi-1/binding/erc20"
+	"github.com/rafaelescrich/go-defi-1/binding/furucombo"
+	"github.com/rafaelescrich/go-defi-1/binding/swapper"
+	"github.com/rafaelescrich/go-defi-1/binding/uniswap"
+	"github.com/rafaelescrich/go-defi-1/binding/yearn/yregistry"
+	"github.com/rafaelescrich/go-defi-1/binding/yearn/yvault"
+	"github.com/rafaelescrich/go-defi-1/binding/yearn/yweth"
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/types"
@@ -94,6 +94,7 @@ const (
 	yETHVaultAddr           string = "0xe1237aA7f535b0CC33Fd973D66cBf830354D16c7"
 	aaveLendingPoolAddr     string = "0x398eC7346DcD622eDc5ae82352F02bE94C62d119"
 	aaveLendingPoolCoreAddr string = "0x3dfd23A6c5E8BbcFc9581d2E864a68feb6a076d3"
+	FurucomboAddr           string = "0xfFffFffF2ba8F66D4e51811C5190992176930278"
 	// Proxy and Handler related addresses
 
 	// ProxyAddr is the address of the proxy contract.
@@ -923,9 +924,9 @@ func (c *AaveClient) FlashLoanActions(size *big.Int, coin coinType, actions *Act
 	return &Actions{
 		Actions: []action{
 			{
-				handlerAddr:          common.HexToAddress(hAaveAddr),
-				data:                 flashLoanData,
-				ethersNeeded:         totalEthers,
+				handlerAddr:  common.HexToAddress(hAaveAddr),
+				data:         flashLoanData,
+				ethersNeeded: totalEthers,
 			},
 		},
 	}

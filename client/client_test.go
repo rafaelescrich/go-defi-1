@@ -7,7 +7,7 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/524119574/go-defi/binding/erc20"
+	"github.com/rafaelescrich/go-defi-1/binding/erc20"
 
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
@@ -38,9 +38,9 @@ func init() {
 	}
 	fromAddr = crypto.PubkeyToAddress(*publicKeyECDSA)
 	defiClient = NewClient(bind.NewKeyedTransactor(key), ethClient)
-	_ = fromAddr
-	_ = ethClient
-	_ = defiClient
+	//_ = fromAddr
+	//_ = ethClient
+	//_ = defiClient
 }
 
 func TestInteractWithCompound(t *testing.T) {

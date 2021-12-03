@@ -1,4 +1,4 @@
-module github.com/524119574/go-defi
+module github.com/rafaelescrich/go-defi-1
 
 go 1.13
 

@@ -72,7 +72,7 @@ import (
 	"log"
 	"math/big"
 
-	"github.com/524119574/go-defi/client"
+	"github.com/rafaelescrich/go-defi-1/client"
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/crypto"
@@ -139,7 +139,7 @@ func main() {
 Go Version: 1.13
 
 ## Documentation
-A more thorough documentation can be found [here](https://godoc.org/github.com/524119574/go-defi/client).
+A more thorough documentation can be found [here](https://godoc.org/github.com/rafaelescrich/go-defi-1/client).
 
 ## Contact
 - Leonard Ge [Twitter](https://twitter.com/ge_leonard)
